@@ -497,7 +497,7 @@
 
         .banner-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -523,7 +523,16 @@
         .banner-text {
             display: flex;
             align-items: center;
-            gap: 15px;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .data-stream {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .ai-label {
@@ -546,29 +555,6 @@
             }
         }
 
-        .separator {
-            color: var(--accent-cyan);
-            font-weight: 300;
-            animation: flicker 1.5s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .tech-stack {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .data-stream {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
 
         .stream-text {
             color: var(--accent-cyan);
@@ -607,27 +593,15 @@
 
         @media (max-width: 768px) {
             .banner-content {
-                flex-direction: column;
-                gap: 8px;
                 padding: 0 15px;
-            }
-            
-            .banner-text {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
             }
             
             .ai-label {
                 font-size: 0.8rem;
             }
             
-            .tech-stack {
-                font-size: 0.7rem;
-            }
-            
             .data-stream {
-                order: -1;
+                right: 15px;
             }
             
             .chart-label {
@@ -664,8 +638,6 @@
             <div class="scanner-line"></div>
             <div class="banner-text">
                 <span class="ai-label">AI RESEARCH & GENERATED</span>
-                <span class="separator">|</span>
-                <span class="tech-stack">CSS3 • JAVASCRIPT • CLAUDE</span>
             </div>
             <div class="data-stream">
                 <span class="stream-text">ANALYZING...</span>
