@@ -1,31 +1,1150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WBWR6BX');</script>
-        <!-- End Google Tag Manager -->
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WBWR6BX');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin Wu | Software Engineer & Architect</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #666666;
+            --accent-green: #00ff41;
+            --accent-cyan: #00ffff;
+            --accent-purple: #9d4edd;
+            --accent-orange: #ff6b35;
+            --border-color: #333333;
+            --shadow-glow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        <title>Bindiego</title>
-    </head>
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
 
-    <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBWR6BX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+        }
 
-        test
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(45deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .terminal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .terminal-header {
+            background: var(--bg-secondary);
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+
+        .terminal-body {
+            padding: 20px;
+            background: var(--bg-card);
+            min-height: 300px;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+        }
+
+        .prompt {
+            color: var(--accent-green);
+        }
+
+        .command {
+            color: var(--accent-cyan);
+        }
+
+        .output {
+            color: var(--text-secondary);
+            margin-left: 20px;
+        }
+
+        .typing {
+            border-right: 2px solid var(--accent-green);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: var(--accent-green); }
+            51%, 100% { border-color: transparent; }
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-green);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            transform: scale(1.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-green);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            color: var(--accent-green);
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            background: var(--bg-primary);
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .matrix-effect {
+            animation: matrix-rain 3s linear infinite;
+        }
+
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100vh); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .language-chart {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .chart-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .chart-item:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .lang-name {
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .lang-lines {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-cyan);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .chart-bar {
+            width: 100%;
+            height: 12px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+            min-width: 8px;
+        }
+
+        .chart-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .chart-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ai-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(17, 17, 17, 0.95));
+            border-bottom: 2px solid var(--accent-green);
+            backdrop-filter: blur(10px);
+            padding: 8px 0;
+            font-family: 'Fira Code', monospace;
+            box-shadow: 0 2px 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            animation: scanner 3s linear infinite;
+            width: 100%;
+        }
+
+        @keyframes scanner {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .banner-text {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ai-label {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { 
+                text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+                color: var(--accent-green);
+            }
+            100% { 
+                text-shadow: 0 0 20px rgba(0, 255, 65, 0.8), 0 0 30px rgba(0, 255, 65, 0.3);
+                color: #00ff65;
+            }
+        }
+
+        .separator {
+            color: var(--accent-cyan);
+            font-weight: 300;
+            animation: flicker 1.5s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .tech-stack {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .data-stream {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stream-text {
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 500;
+            animation: data-flow 2s ease-in-out infinite;
+        }
+
+        @keyframes data-flow {
+            0%, 100% { 
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.05);
+                text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            }
+        }
+
+        .cursor-blink {
+            color: var(--accent-green);
+            font-weight: 700;
+            animation: cursor-blink 1s infinite;
+        }
+
+        @keyframes cursor-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Adjust hero section to account for banner */
+        .hero {
+            padding-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .banner-content {
+                flex-direction: column;
+                gap: 8px;
+                padding: 0 15px;
+            }
+            
+            .banner-text {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .ai-label {
+                font-size: 0.8rem;
+            }
+            
+            .tech-stack {
+                font-size: 0.7rem;
+            }
+            
+            .data-stream {
+                order: -1;
+            }
+            
+            .chart-label {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .chart-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBWR6BX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="matrix-bg"></div>
+
+    <!-- AI Research Banner -->
+    <div class="ai-banner">
+        <div class="banner-content">
+            <div class="scanner-line"></div>
+            <div class="banner-text">
+                <span class="ai-label">AI RESEARCH & GENERATED</span>
+                <span class="separator">|</span>
+                <span class="tech-stack">CSS3 • JAVASCRIPT • CLAUDE</span>
+            </div>
+            <div class="data-stream">
+                <span class="stream-text">ANALYZING...</span>
+                <span class="cursor-blink">_</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glow-text">BIN WU</h1>
+                    <div class="subtitle">Software Engineer & Cloud Architect</div>
+                    <div class="tagline code-font">"be cool" - crafting scalable systems at enterprise scale</div>
+                </div>
+                
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">binwu@engineer:~$</span> 
+                            <span class="command">whoami</span>
+                        </div>
+                        <div class="terminal-line output">Senior Software Engineer & Cloud Architect</div>
+                        <div class="terminal-line output">12+ years on GitHub | Melbourne, Australia</div>
+                        
+                        <div class="terminal-line">
+                            <span class="prompt">binwu@engineer:~$</span> 
+                            <span class="command">cat skills.txt</span>
+                        </div>
+                        <div class="terminal-line output">▸ Cloud Architecture (GCP, BigQuery, Dataflow)</div>
+                        <div class="terminal-line output">▸ DevOps & Infrastructure (Docker, K8s, CI/CD)</div>
+                        <div class="terminal-line output">▸ Backend Development (Java, Python, C++)</div>
+                        <div class="terminal-line output">▸ Data Engineering (Elasticsearch, Apache Beam)</div>
+                        <div class="terminal-line output">▸ Systems Programming (Linux, Shell, Automation)</div>
+                        
+                        <div class="terminal-line">
+                            <span class="prompt">binwu@engineer:~$</span> 
+                            <span class="command typing">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud" aria-hidden="true"></i> Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Cloud Platform</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Apache Beam</span>
+                        <span class="skill-tag">Dataflow</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Infrastructure as Code</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code" aria-hidden="true"></i> Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Shell/Bash</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database" aria-hidden="true"></i> Data Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Elasticsearch</span>
+                        <span class="skill-tag">Apache Beam</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Data Pipelines</span>
+                        <span class="skill-tag">ETL/ELT</span>
+                        <span class="skill-tag">Stream Processing</span>
+                        <span class="skill-tag">Data Analytics</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs" aria-hidden="true"></i> DevOps & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Build Systems</span>
+                        <span class="skill-tag">Linux Administration</span>
+                        <span class="skill-tag">Automation Scripts</span>
+                        <span class="skill-tag">Monitoring</span>
+                        <span class="skill-tag">Performance Tuning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Notable Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">Local Services Framework</div>
+                    <div class="project-description">
+                        Comprehensive development environment automation framework for running services across Linux distributions. 
+                        Streamlines local development with Docker-based service orchestration.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Shell</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">DevOps</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="fas fa-star" aria-hidden="true"></i> 16 stars</span>
+                        <span><i class="fas fa-code-branch" aria-hidden="true"></i> 12 forks</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">Docker Infrastructure Images</div>
+                    <div class="project-description">
+                        Structured Docker image collection designed for DevOps workflows. 
+                        Provides standardized containerization patterns for enterprise deployment.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Makefile</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Infrastructure</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="fas fa-star" aria-hidden="true"></i> 2 stars</span>
+                        <span><i class="fas fa-download" aria-hidden="true"></i> Production Ready</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">NYC Taxi Data Pipeline</div>
+                    <div class="project-description">
+                        High-performance data ingestion pipeline for loading NYC taxi datasets into Elasticsearch. 
+                        Demonstrates large-scale data processing and search optimization techniques.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">Shell</span>
+                        <span class="tech-tag">Data Engineering</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="fas fa-database" aria-hidden="true"></i> Big Data</span>
+                        <span><i class="fas fa-search" aria-hidden="true"></i> Search Optimized</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-title">CGMgr System Utilities</div>
+                    <div class="project-description">
+                        Low-level systems programming toolkit built with C++ and Java. 
+                        Focuses on performance-critical applications and system resource management.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Makefile</span>
+                        <span class="tech-tag">Systems</span>
+                    </div>
+                    <div class="project-stats">
+                        <span><i class="fas fa-microchip" aria-hidden="true"></i> System Level</span>
+                        <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> High Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact">
+        <div class="container">
+            <h2 class="section-title">Connect</h2>
+            <p class="subtitle">Let's build something amazing together</p>
+            
+            <div class="contact-links">
+                <a href="https://github.com/bindiego" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/gingerwu/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:bindiego@google.com" class="contact-link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Code Contributions by Language</h2>
+            <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Total lines of code across public repositories</p>
+            
+            <div class="language-chart">
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Java</span>
+                        <span class="lang-lines">9,120,712</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 100%; background: linear-gradient(90deg, #ed8b00, #f89820);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">MATLAB</span>
+                        <span class="lang-lines">348,746</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 3.8%; background: linear-gradient(90deg, #e97627, #f39c12);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Rust</span>
+                        <span class="lang-lines">171,673</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 1.9%; background: linear-gradient(90deg, #ce422b, #8c1a1a);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Shell/Bash</span>
+                        <span class="lang-lines">118,570</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 1.3%; background: linear-gradient(90deg, var(--accent-green), #27ca3f);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Go</span>
+                        <span class="lang-lines">102,329</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 1.1%; background: linear-gradient(90deg, #00add8, #007d9c);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">JavaScript</span>
+                        <span class="lang-lines">44,789</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.49%; background: linear-gradient(90deg, #f7df1e, #f0db4f);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">C++</span>
+                        <span class="lang-lines">34,022</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.37%; background: linear-gradient(90deg, #00599c, #004482);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Makefile</span>
+                        <span class="lang-lines">33,043</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.36%; background: linear-gradient(90deg, #427819, #5d9c19);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Python</span>
+                        <span class="lang-lines">35,846</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.39%; background: linear-gradient(90deg, #3776ab, #ffd343);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Dockerfile</span>
+                        <span class="lang-lines">15,264</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.17%; background: linear-gradient(90deg, #384d54, #0db7ed);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">C</span>
+                        <span class="lang-lines">8,755</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.096%; background: linear-gradient(90deg, #555555, #283593);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">HTML</span>
+                        <span class="lang-lines">4,564</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.05%; background: linear-gradient(90deg, #e34c26, #f06529);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Batchfile</span>
+                        <span class="lang-lines">640</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.007%; background: linear-gradient(90deg, #c1f12e, #a8d200);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">Ruby</span>
+                        <span class="lang-lines">550</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.006%; background: linear-gradient(90deg, #cc342d, #701516);"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span class="lang-name">M (Octave)</span>
+                        <span class="lang-lines">134</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-fill" style="width: 0.001%; background: linear-gradient(90deg, #0790c0, #0b6ba3);"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-stats">
+                <div class="stat-item">
+                    <span class="stat-number code-font">9,918,637</span>
+                    <span class="stat-label">Total Bytes of Code</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number code-font">15</span>
+                    <span class="stat-label">Programming Languages</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number code-font">14+</span>
+                    <span class="stat-label">Total Repositories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number code-font">149</span>
+                    <span class="stat-label">Public Gists</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="code-font">© 2025 Bin Wu | Crafted with code and coffee ☕</p>
+        </div>
+    </footer>
+
+    <script>
+        const typingElement = document.querySelector('.typing');
+        const commands = ['ls -la', 'git status', 'docker ps', 'kubectl get pods', 'python main.py'];
+        let currentCommand = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function typeCommand() {
+            const command = commands[currentCommand];
+            
+            if (!isDeleting && currentChar < command.length) {
+                typingElement.textContent = command.substring(0, currentChar + 1) + '_';
+                currentChar++;
+                setTimeout(typeCommand, 100);
+            } else if (isDeleting && currentChar > 0) {
+                typingElement.textContent = command.substring(0, currentChar - 1) + '_';
+                currentChar--;
+                setTimeout(typeCommand, 50);
+            } else if (!isDeleting && currentChar === command.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeCommand();
+                }, 2000);
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentCommand = (currentCommand + 1) % commands.length;
+                setTimeout(typeCommand, 500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeCommand, 2000);
+        });
+
+        document.querySelectorAll('.skill-category, .project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.matrix-bg');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Animate chart bars when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const chartFills = entry.target.querySelectorAll('.chart-fill');
+                    chartFills.forEach((fill, index) => {
+                        setTimeout(() => {
+                            const targetWidth = fill.style.width;
+                            fill.style.width = '0%';
+                            setTimeout(() => {
+                                fill.style.width = targetWidth;
+                            }, 100);
+                        }, index * 100);
+                    });
+                    chartObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageChart = document.querySelector('.language-chart');
+            if (languageChart) {
+                chartObserver.observe(languageChart);
+            }
+        });
+    </script>
+</body>
 </html>
