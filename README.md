@@ -2,9 +2,9 @@
 
 A modern, tech-focused personal website showcasing software engineering expertise and projects. Built with a hacker-aesthetic design featuring terminal interactions and Matrix-inspired styling.
 
-## 🚀 Live Demo
+## 🌐 Website
 
-Visit the website: [https://bindiego.github.io](https://bindiego.github.io)
+Visit: [https://bindiego.github.io](https://bindiego.github.io)
 
 ## ✨ Features
 
