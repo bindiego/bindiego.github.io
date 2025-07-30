@@ -139,7 +139,7 @@ This is a personal website repository. For suggestions or improvements:
 
 - **GitHub**: [@bindiego](https://github.com/bindiego)
 - **LinkedIn**: [gingerwu](https://www.linkedin.com/in/gingerwu/)
-- **Email**: bindiego@google.com
+- **Email**: maverickcn@gmail.com
 
 ## 📝 License
 
