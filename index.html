@@ -234,6 +234,12 @@
             gap: 30px;
         }
 
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -710,9 +716,11 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-code" aria-hidden="true"></i> Backend Development</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Golang</span>
+                        <span class="skill-tag">Rust</span>
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C/C++</span>
                         <span class="skill-tag">Shell/Bash</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">RESTful APIs</span>
@@ -754,78 +762,131 @@
             <h2 class="section-title">Notable Projects</h2>
             
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-title">Local Services Framework</div>
-                    <div class="project-description">
-                        Comprehensive development environment automation framework for running services across Linux distributions. 
-                        Streamlines local development with Docker-based service orchestration.
+                <a href="https://github.com/elasticsearch-cn/elastic-on-gke" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">Elastic on GKE</div>
+                        <div class="project-description">
+                            Production-ready Elasticsearch deployment on Google Kubernetes Engine with enterprise-grade features. 
+                            Supports 40-node clusters with 200TB data across multiple zones with complete mTLS security.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Elasticsearch</span>
+                            <span class="tech-tag">GCP</span>
+                            <span class="tech-tag">Shell</span>
+                            <span class="tech-tag">Java</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 17 stars</span>
+                            <span><i class="fas fa-code-branch" aria-hidden="true"></i> 9 forks</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Shell</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">DevOps</span>
-                    </div>
-                    <div class="project-stats">
-                        <span><i class="fas fa-star" aria-hidden="true"></i> 16 stars</span>
-                        <span><i class="fas fa-code-branch" aria-hidden="true"></i> 12 forks</span>
-                    </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
-                    <div class="project-title">Docker Infrastructure Images</div>
-                    <div class="project-description">
-                        Structured Docker image collection designed for DevOps workflows. 
-                        Provides standardized containerization patterns for enterprise deployment.
+                <a href="https://github.com/cloudymoma/raycom" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">Raycom Data Platform</div>
+                        <div class="project-description">
+                            Real-time streaming analytics platform with Apache Beam on GCP. 
+                            Achieves sub-500ms data latency with multi-sink architecture for BigQuery, Bigtable, and Elasticsearch.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Apache Beam</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">GCP</span>
+                            <span class="tech-tag">BigQuery</span>
+                            <span class="tech-tag">Streaming</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 27 stars</span>
+                            <span><i class="fas fa-code-branch" aria-hidden="true"></i> 6 forks</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Makefile</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Infrastructure</span>
-                    </div>
-                    <div class="project-stats">
-                        <span><i class="fas fa-star" aria-hidden="true"></i> 2 stars</span>
-                        <span><i class="fas fa-download" aria-hidden="true"></i> Production Ready</span>
-                    </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
-                    <div class="project-title">NYC Taxi Data Pipeline</div>
-                    <div class="project-description">
-                        High-performance data ingestion pipeline for loading NYC taxi datasets into Elasticsearch. 
-                        Demonstrates large-scale data processing and search optimization techniques.
+                <a href="https://github.com/infinilabs/coco-server" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">Coco AI Server</div>
+                        <div class="project-description">
+                            AI-powered enterprise search and collaboration platform connecting Google Workspace, GitHub, Confluence. 
+                            Features Gen-AI integration for intelligent knowledge discovery with one-minute embedding.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Search</span>
+                            <span class="tech-tag">Enterprise</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 102 stars</span>
+                            <span><i class="fas fa-code-branch" aria-hidden="true"></i> 24 forks</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Elasticsearch</span>
-                        <span class="tech-tag">Shell</span>
-                        <span class="tech-tag">Data Engineering</span>
-                        <span class="tech-tag">Analytics</span>
-                    </div>
-                    <div class="project-stats">
-                        <span><i class="fas fa-database" aria-hidden="true"></i> Big Data</span>
-                        <span><i class="fas fa-search" aria-hidden="true"></i> Search Optimized</span>
-                    </div>
-                </div>
+                </a>
                 
-                <div class="project-card">
-                    <div class="project-title">CGMgr System Utilities</div>
-                    <div class="project-description">
-                        Low-level systems programming toolkit built with C++ and Java. 
-                        Focuses on performance-critical applications and system resource management.
+                <a href="https://github.com/infinilabs/zipora" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">Zipora</div>
+                        <div class="project-description">
+                            High-performance Rust data structures library with memory safety guarantees. 
+                            Features SIMD optimizations, advanced compression algorithms, and sub-microsecond operations with 97% test coverage.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rust</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SIMD</span>
+                            <span class="tech-tag">Compression</span>
+                            <span class="tech-tag">Performance</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 3 stars</span>
+                            <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> Sub-μs Performance</span>
+                        </div>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Makefile</span>
-                        <span class="tech-tag">Systems</span>
+                </a>
+                
+                <a href="https://github.com/cloudymoma/rustmq" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">RustMQ</div>
+                        <div class="project-description">
+                            Cloud-native distributed message queue with storage-compute separation. 
+                            Achieves 10x cost reduction and 100x elasticity with QUIC/HTTP3 protocol and sub-microsecond security.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rust</span>
+                            <span class="tech-tag">QUIC/HTTP3</span>
+                            <span class="tech-tag">Cloud Native</span>
+                            <span class="tech-tag">Message Queue</span>
+                            <span class="tech-tag">WebAssembly</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 4 stars</span>
+                            <span><i class="fas fa-cloud" aria-hidden="true"></i> Cloud Optimized</span>
+                        </div>
                     </div>
-                    <div class="project-stats">
-                        <span><i class="fas fa-microchip" aria-hidden="true"></i> System Level</span>
-                        <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> High Performance</span>
+                </a>
+                
+                <a href="https://github.com/cloudymoma/gcp-playgroud-public" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="project-card">
+                        <div class="project-title">GCP Playground</div>
+                        <div class="project-description">
+                            Comprehensive Google Cloud Platform tutorials and best practices collection. 
+                            Features hands-on examples, production troubleshooting guides, and enterprise-grade guidance for GCP services.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Jupyter</span>
+                            <span class="tech-tag">GCP</span>
+                            <span class="tech-tag">BigQuery</span>
+                            <span class="tech-tag">Tutorials</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star" aria-hidden="true"></i> 4 stars</span>
+                            <span><i class="fas fa-book" aria-hidden="true"></i> Comprehensive Docs</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
