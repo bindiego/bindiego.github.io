@@ -23,7 +23,7 @@ Visit: [https://bindiego.github.io](https://bindiego.github.io)
 
 ### Technical Expertise
 - **Cloud & Infrastructure**: GCP, BigQuery, Docker, Kubernetes
-- **Backend Development**: Java, Python, C++, SQL, Microservices
+- **Backend Development**: C, Go, Rust, Java, Python, SQL, Microservices
 - **Data Engineering**: Elasticsearch, Apache Beam, ETL/ELT pipelines
 - **DevOps & Automation**: CI/CD, Linux, Build Systems, Monitoring
 
