@@ -22,19 +22,23 @@ Visit: [https://bindiego.github.io](https://bindiego.github.io)
 - Professional tagline and location information
 
 ### Technical Expertise
-- **Cloud & Infrastructure**: GCP, BigQuery, Docker, Kubernetes
-- **Backend Development**: C, Go, Rust, Java, Python, SQL, Microservices
-- **Data Engineering**: Elasticsearch, Apache Beam, ETL/ELT pipelines
-- **DevOps & Automation**: CI/CD, Linux, Build Systems, Monitoring
+- **Cloud & Infrastructure**: GCP, BigQuery, Apache Beam, Dataflow, Docker, Kubernetes, Infrastructure as Code
+- **Backend Development**: C/C++, Golang, Rust, Java, Python, Shell/Bash, SQL, RESTful APIs, Microservices
+- **Data Engineering**: Elasticsearch, Apache Beam, BigQuery, Data Pipelines, ETL/ELT, Stream Processing, Data Analytics
+- **DevOps & Automation**: CI/CD, Docker, Build Systems, Linux Administration, Automation Scripts, Monitoring, Performance Tuning
 
 ### Notable Projects
-- **Local Services Framework**: Development environment automation (16⭐, 12🍴)
-- **Docker Infrastructure Images**: Standardized containerization patterns
-- **NYC Taxi Data Pipeline**: Large-scale Elasticsearch data ingestion
-- **CGMgr System Utilities**: Performance-critical C++ and Java toolkit
+- **Elastic on GKE**: Production-ready Elasticsearch deployment on Google Kubernetes Engine
+- **Raycom Data Platform**: Real-time streaming analytics platform with Apache Beam on GCP
+- **Coco AI Server**: AI-powered enterprise search and collaboration platform
+- **Zipora**: High-performance Rust data structures library with SIMD optimizations
+- **RustMQ**: Cloud-native distributed message queue with QUIC/HTTP3 protocol
+- **GCP Playground**: Comprehensive Google Cloud Platform tutorials and best practices
+- **Infinishield**: CLI tool for embedding invisible, password-protected watermarks into media
+- **BigLens**: Real-time BigQuery observability and cost insights dashboard
 
 ### Contact & Links
-- GitHub profile with 12+ years of contributions
+- GitHub profile
 - LinkedIn professional network
 - Direct email contact
 
@@ -112,11 +116,10 @@ The website is automatically deployed via **GitHub Pages**:
 
 ## 🎯 Key Highlights
 
-- **12+ years** of GitHub contributions and open-source involvement
-- **Senior Software Engineer** with cloud architecture expertise
-- **Multi-language proficiency**: Java, Python, C++, Shell, SQL
+- **Software Engineer & Cloud Architect** with cloud architecture expertise
+- **Multi-language proficiency**: C/C++, Golang, Rust, Java, Python, TypeScript, Shell, SQL
 - **Enterprise experience** in scalable systems development
-- **Community involvement**: 149 public gists and knowledge sharing
+- **Open-source involvement**: Active contributor across cloud, data, and AI/ML ecosystems
 
 ## 📊 Analytics
 
